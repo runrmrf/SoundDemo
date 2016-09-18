@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.mancng.sounddemo.MainActivity"
+    android:gravity="top|center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Infinity-One Direction (Whitney Worez Cover)"
+        android:id="@+id/textView"
+        android:gravity="center_horizontal"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="200dp"
+        android:id="@+id/linearLayout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play"
+            android:id="@+id/btnPlay"
+            android:layout_gravity="top|center_vertical"
+            android:onClick="playMusic"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pause"
+            android:id="@+id/btnPause"
+            android:layout_marginLeft="20dp"
+            android:onClick="pauseMusic"
+            android:layout_gravity="top"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:weightSum="1"
+        android:id="@+id/audioLayout">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMute"
+            android:src="@android:drawable/ic_lock_silent_mode"
+            android:layout_below="@+id/barVolume"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="muteMusic"
+            android:nestedScrollingEnabled="true"/>
+
+        <SeekBar
+            android:layout_width="194dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/barVolume"
+            android:layout_toRightOf="@+id/btnMute"
+            android:layout_below="@+id/linearLayout"
+            android:layout_weight="1.17"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLoud"
+            android:src="@android:drawable/ic_lock_silent_mode_off"
+            android:layout_below="@+id/barVolume"
+            android:layout_alignRight="@+id/barVolume"
+            android:layout_alignEnd="@+id/barVolume"
+            android:onClick="loudMusic"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dp"
+        android:id="@+id/mediaLayout">
+
+    </LinearLayout>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="70dp"/>
+
+</RelativeLayout>
